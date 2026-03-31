@@ -198,7 +198,7 @@ function Layout({ children }) {
     { label: "Services", path: "/services" },
     { label: "Doctors", path: "/doctors" },
     { label: "Medical Tourism", path: "/medical-tourism" },
-    { label: "Blog", path: "/blog" },
+    { label: "Blogs", path: "/blogsnp" },
     { label: "Contact", path: "/contact" },
   ];
 
