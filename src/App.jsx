@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Link, NavLink, Route, Routes } from "react-router-dom";
 
 const assetPath = (filename) => `/images/${filename}`;
@@ -449,6 +450,18 @@ function DoctorsPage() {
 }
 
 function TourismPage() {
+  useEffect(() => {
+  const existingScript = document.querySelector(
+    'script[src="https://js-eu1.hsforms.net/forms/embed/147406607.js"]'
+  );
+
+  if (!existingScript) {
+    const script = document.createElement("script");
+    script.src = "https://js-eu1.hsforms.net/forms/embed/147406607.js";
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+}, []);
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
@@ -469,11 +482,13 @@ function TourismPage() {
         <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">International patient enquiry</p>
           <h3 className="mt-3 text-2xl font-semibold text-slate-900">Plan your dental visit</h3>
-          <p className="mt-3 text-sm leading-7 text-slate-600">Use this page for an embedded HubSpot form for international patients. Add country, treatment interest, travel timeline, and message fields inside HubSpot.</p>
           <div className="mt-6 rounded-3xl border-2 border-dashed border-slate-300 bg-slate-50 p-6 text-sm leading-7 text-slate-600">
-            <p className="font-semibold text-slate-900">HubSpot Form Placeholder</p>
-            <p className="mt-2">Recommended fields: Full name, email, phone, country, treatment interest, preferred travel timeframe, message, consent.</p>
-            <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 text-center text-slate-500">International HubSpot form will render here.</div>
+            <div
+            className="hs-form-frame"
+            data-region="eu1"
+            data-form-id="77bad311-5ba5-433d-ac8a-9b77f86d0b6c"
+            data-portal-id="147406607"
+          ></div>
           </div>
         </div>
       </div>
@@ -536,6 +551,18 @@ function BlogDetailPage({ post }) {
 }
 
 function ContactPage() {
+  useEffect(() => {
+    const existingScript = document.querySelector(
+      'script[src="https://js-eu1.hsforms.net/forms/embed/147406607.js"]'
+    );
+
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = "https://js-eu1.hsforms.net/forms/embed/147406607.js";
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  }, []);
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
       <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
@@ -550,21 +577,13 @@ function ContactPage() {
         </div>
         <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">Book consultation</p>
-          <h3 className="mt-3 text-2xl font-semibold text-slate-900">Main HubSpot enquiry form</h3>
-          <p className="mt-3 text-sm leading-7 text-slate-600">Create this form inside HubSpot and embed it here. This keeps contact capture, lifecycle management, and future automation in one place.</p>
           <div className="mt-6 rounded-3xl border-2 border-dashed border-slate-300 bg-slate-50 p-6 text-sm leading-7 text-slate-600">
-            <p className="font-semibold text-slate-900">Recommended HubSpot form fields</p>
-            <ul className="mt-3 space-y-2 text-slate-700">
-              <li>• Full name</li>
-              <li>• Email address</li>
-              <li>• Phone number</li>
-              <li>• Country</li>
-              <li>• Treatment interest</li>
-              <li>• Preferred appointment date</li>
-              <li>• Message</li>
-              <li>• Consent checkbox</li>
-            </ul>
-            <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 text-center text-slate-500">Main HubSpot form will render here.</div>
+            <div
+            className="hs-form-frame"
+            data-region="eu1"
+            data-form-id="77bad311-5ba5-433d-ac8a-9b77f86d0b6c"
+            data-portal-id="147406607"
+          ></div>
           </div>
         </div>
       </div>
