@@ -59,9 +59,9 @@ const doctors = [
   {
     name: "Dr. Vinay S. Dua",
     specialty: "Orthodontics and Dentofacial Orthopaedics",
-    fullBio:
-      "Dr. Vinay S. Dua is a distinguished orthodontist, educator, and researcher whose work spans specialist clinical care, academic leadership, professional governance, publications, and invited speaking engagements. His profile brings exceptional credibility to the clinic’s orthodontic offering.",
-    highlights: [
+fullBio:
+  "Dr. Vinay S. Dua is a distinguished orthodontist with extensive experience in clinical care, teaching, and research. His work reflects a strong commitment to precision, patient care, and long-term treatment outcomes.",
+  highlights: [
       "Director-Principal, Professor, and Head of Department",
       "Executive Committee Member, Punjab Dental Council",
       "Member, Indian Orthodontic Society",
@@ -72,9 +72,8 @@ const doctors = [
   {
     name: "Dr. Sunaina",
     specialty: "Paediatric Dentistry",
-    fullBio:
-      "Dr. Sunaina combines paediatric dental expertise with a warm, patient-centred approach that helps children and parents feel supported throughout the treatment journey. Her academic and clinical background adds strong trust and reassurance for families.",
-    highlights: [
+fullBio:
+  "Dr. Sunaina combines paediatric dental expertise with a warm and reassuring approach that helps children and parents feel comfortable throughout the treatment journey. Her academic and clinical experience adds trust and confidence for families seeking specialised care.",    highlights: [
       "Best All India Best Post Graduate Student",
       "14 years of academic and clinical experience",
       "Special interest in paediatric orthodontics",
@@ -232,7 +231,9 @@ function Layout({ children }) {
             <p className="text-xl font-semibold text-slate-900">Bhatia Dental Clinic</p>
             <p className="mt-2 text-sm text-slate-600">Advanced Dental Care. Trusted Hands. Confident Smiles.</p>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600">
-              A premium multi-page dental clinic website concept built for Netlify hosting, growth-focused content, and HubSpot-powered lead capture.
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600">
+                  We are committed to providing high-quality dental care in a calm, modern, and patient-focused environment.
+            </p>  
             </p>
           </div>
           <div className="text-sm text-slate-600 lg:text-right">
@@ -282,7 +283,7 @@ function HomePage() {
             <div className="col-span-full rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100">Clinic Location</p>
               <p className="mt-2 text-lg font-medium">757 Hargobind Nagar, Phagwara, Punjab 144401</p>
-              <p className="mt-3 text-sm text-sky-100">Welcoming local patients from Punjab and international patients seeking trusted dental care in India.</p>
+              <p className="mt-3 text-sm text-sky-100">Welcoming local and international patients seeking trusted dental care in India.</p>
             </div>
           </div>
         </div>
@@ -292,7 +293,7 @@ function HomePage() {
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
             <SectionHeader eyebrow="About the clinic" title="A premium dental clinic built on expertise, trust, and patient comfort." description="Bhatia Dental Clinic is designed to offer a reassuring, high-quality experience for patients seeking dependable dental care in Phagwara." />
-            <p className="mt-5 text-base leading-7 text-slate-600">With an elegant clinical environment, experienced professionals, and support for international dental tourism, the clinic is positioned to serve both local families and patients travelling for care in India.</p>
+            <p className="mt-5 text-base leading-7 text-slate-600">With an experienced team, a welcoming clinical environment, and support for patients travelling for treatment, we aim to provide care that feels professional, reassuring, and easy to access.</p>
             <div className="mt-8 flex gap-4">
               <PrimaryLink to="/about">Learn More</PrimaryLink>
               <PrimaryLink to="/doctors" variant="outline">Meet the Doctors</PrimaryLink>
@@ -303,7 +304,7 @@ function HomePage() {
               <div key={item} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="mb-4 h-10 w-10 rounded-2xl bg-sky-100" />
                 <p className="text-lg font-semibold text-slate-900">{item}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-600">Built to support a smooth, reassuring patient journey from enquiry through consultation and treatment.</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Focused on making every stage of care clear, comfortable, and reassuring for patients.</p>
               </div>
             ))}
           </div>
@@ -313,8 +314,8 @@ function HomePage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex items-end justify-between gap-6">
-            <SectionHeader eyebrow="Services" title="Comprehensive dental services delivered with a premium standard of care." description="Explore a structured service overview, then move into dedicated pages for individual service lines." />
-            <PrimaryLink to="/services" variant="outline">View All Services</PrimaryLink>
+            <SectionHeader eyebrow="Services" title="Comprehensive dental services for patients of all ages." description="From routine care to specialist treatment, we provide a wide range of services to support oral health, comfort, and confidence." />
+            <PrimaryLink to="/services" variant="outline">Learn more</PrimaryLink>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => (
@@ -331,8 +332,8 @@ function HomePage() {
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="flex items-end justify-between gap-6">
-          <SectionHeader eyebrow="Blog" title="Educational content designed to build trust and grow organic visibility." description="The blog now has dedicated article pages to support stronger SEO structure and clearer navigation." />
-          <PrimaryLink to="/blog" variant="outline">Visit Blog</PrimaryLink>
+          <SectionHeader eyebrow="Blogs" title="Dental advice and guidance you can trust." description="Explore helpful articles on treatments, oral health, and common dental questions to help you make informed decisions." />
+          <PrimaryLink to="/blog" variant="outline">Visit Blogs</PrimaryLink>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {blogPosts.map((post) => (
@@ -355,13 +356,11 @@ function HomePage() {
 function AboutPage() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <SectionHeader eyebrow="About" title="A premium clinic experience shaped by expertise, trust, and calm patient care." description="This page gives Bhatia Dental Clinic a stronger brand story and a clearer local identity than a single scrolling section." />
-      <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr]">
+      <SectionHeader eyebrow="About" title="A calm, modern clinic experience shaped by expertise and patient care." description="At Bhatia Dental Clinic, we focus on creating a reassuring environment where patients feel informed, comfortable, and well cared for." />      <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="space-y-6 text-base leading-8 text-slate-600">
-          <p>Bhatia Dental Clinic is positioned as a modern, specialist-supported dental clinic in Phagwara, Punjab. The website’s multi-page structure helps create clearer navigation for patients while also supporting stronger search visibility over time.</p>
-          <p>The clinic experience is designed to feel premium, reassuring, and patient-first. From the first enquiry through consultation and treatment, the tone of the website reflects comfort, professionalism, and trust.</p>
-          <p>With support for local patients and international enquiries, the clinic is also prepared to communicate clearly with patients travelling to India for care.</p>
-        </div>
+        <p>Bhatia Dental Clinic provides modern dental care in Phagwara, Punjab, with a strong focus on clinical quality, patient comfort, and clear communication.</p>
+        <p>We believe dental treatment should feel reassuring and well organised from the first consultation onward. Our aim is to help patients feel confident in their care, whether they are visiting for routine treatment or more specialised support.</p>
+        <p>We welcome both local patients and those travelling for treatment, offering a professional and patient-focused experience throughout every stage of care.</p>      </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {galleryImages.map((image, idx) => (
             <div key={image} className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
@@ -401,8 +400,8 @@ function ServiceDetailPage({ service }) {
           <SectionHeader eyebrow="Service" title={service.title} description={service.description} />
           <div className="mt-8 space-y-5 text-base leading-8 text-slate-600">
             <p>{service.longDescription}</p>
-            <p>This dedicated page structure gives the clinic a much stronger foundation for future optimisation, targeted copywriting, and service-specific patient journeys.</p>
-            <p>When you are ready, this page can be expanded with FAQs, treatment pathways, consultation details, and dedicated HubSpot forms for this service.</p>
+            <p>We take time to explain your options clearly so you can make informed decisions about your care with confidence.</p>
+            <p>Every treatment is planned with attention to comfort, clarity, and long-term oral health, so patients know what to expect at every stage.</p>
           </div>
           <div className="mt-8 flex gap-4">
             <PrimaryLink to="/contact">Book Consultation</PrimaryLink>
@@ -420,8 +419,7 @@ function ServiceDetailPage({ service }) {
 function DoctorsPage() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <SectionHeader eyebrow="Doctors" title="Experienced clinicians with specialist expertise and a strong academic foundation." description="This page gives the medical team dedicated space, which is especially valuable for trust and conversion." />
-      <div className="mt-12 grid gap-8 lg:grid-cols-2">
+<SectionHeader eyebrow="Doctors" title="Experienced clinicians with specialist expertise and a patient-focused approach." description="Our doctors combine clinical knowledge, academic experience, and a commitment to delivering thoughtful, personalised care." />     <div className="mt-12 grid gap-8 lg:grid-cols-2">
         {doctors.map((doctor) => (
           <article key={doctor.name} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
             <div className="grid gap-0 md:grid-cols-[0.85fr_1.15fr]">
@@ -466,8 +464,7 @@ function TourismPage() {
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
         <div>
-          <SectionHeader eyebrow="Medical tourism" title="World-class dental care, right here in India." description="This dedicated page creates a clearer pathway for international patients and is much more effective than hiding the content on a single long homepage." />
-          <div className="mt-8 rounded-[2rem] border border-sky-100 bg-sky-50 p-8">
+<SectionHeader eyebrow="Medical tourism" title="High-quality dental care for patients travelling to India." description="We support international patients with clear communication, treatment planning, and a comfortable clinical experience from the first enquiry onward." />          <div className="mt-8 rounded-[2rem] border border-sky-100 bg-sky-50 p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">How it works</p>
             <ol className="mt-5 space-y-4">
               {tourismSteps.map((step, idx) => (
@@ -480,7 +477,7 @@ function TourismPage() {
           </div>
         </div>
         <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">International patient enquiry</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">International enquiries</p>
           <h3 className="mt-3 text-2xl font-semibold text-slate-900">Plan your dental visit</h3>
           <div className="mt-6 rounded-3xl border-2 border-dashed border-slate-300 bg-slate-50 p-6 text-sm leading-7 text-slate-600">
             <div
@@ -499,8 +496,7 @@ function TourismPage() {
 function BlogPage() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-      <SectionHeader eyebrow="Blog" title="Browse educational articles built to support patient trust and organic discovery." description="Each article now has its own page path, which is a much better long-term setup than a single-page blog section." />
-      <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <SectionHeader eyebrow="Blogs" title="Dental advice, treatment guidance, and patient education." description="Explore articles that answer common questions and help patients make informed decisions about their dental care." />      <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {blogPosts.map((post) => (
           <article key={post.slug} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
             <img src={post.image} alt={post.title} className="h-40 w-full object-cover" />
@@ -520,7 +516,7 @@ function BlogPage() {
 function BlogDetailPage({ post }) {
   return (
     <section className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
-      <Link to="/blog" className="text-sm font-semibold text-sky-700 hover:text-sky-900">← Back to blog</Link>
+      <Link to="/blog" className="text-sm font-semibold text-sky-700 hover:text-sky-900">← Back to blogs</Link>
       <div className="mt-6 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
         <img src={post.image} alt={post.title} className="h-64 w-full object-cover" />
         <div className="p-8">
@@ -567,8 +563,7 @@ function ContactPage() {
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
       <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
         <div>
-          <SectionHeader eyebrow="Contact" title="Start with a consultation request." description="This page keeps form submission as the main conversion action while separating contact intent from the rest of the site." />
-          <div className="mt-8 rounded-[2rem] border border-slate-200 bg-slate-50 p-8">
+<SectionHeader eyebrow="Contact" title="Book your consultation." description="Get in touch with our team to discuss your treatment needs, ask questions, or arrange an appointment." />          <div className="mt-8 rounded-[2rem] border border-slate-200 bg-slate-50 p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Visit us</p>
             <p className="mt-3 text-lg font-semibold text-slate-900">Bhatia Dental Clinic</p>
             <p className="mt-2 text-sm leading-7 text-slate-600">757 Hargobind Nagar, Phagwara, Punjab 144401</p>
